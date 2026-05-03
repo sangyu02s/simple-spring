@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>ssm-crud-demo</artifactId>
+    <artifactId>simple-spring</artifactId>
     <version>1.0.0</version>
     <!-- WAR means this project is deployed to an external servlet container such as Tomcat. -->
     <packaging>war</packaging>
 
-    <name>ssm-crud-demo</name>
+    <name>simple-spring</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -84,8 +84,8 @@
     </dependencies>
 
     <build>
-        <!-- The generated file is target/ssm-crud-demo.war, and Tomcat uses this as the context path. -->
-        <finalName>ssm-crud-demo</finalName>
+        <!-- The generated file is target/simple-spring.war, and Tomcat uses this as the context path. -->
+        <finalName>simple-spring</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

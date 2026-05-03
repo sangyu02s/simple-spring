@@ -10,7 +10,7 @@
         applicationContext.xml, then registers Spring MVC's DispatcherServlet
         with dispatcher-servlet.xml.
     -->
-    <display-name>ssm-crud-demo</display-name>
+    <display-name>simple-spring</display-name>
 
     <!-- Root Spring container XML: services, datasource, MyBatis, transactions. -->
     <context-param>
@@ -37,7 +37,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <!-- "/" keeps the same URL shape: /ssm-crud-demo/api/books. -->
+    <!-- "/" keeps the same URL shape: /simple-spring/api/books. -->
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>

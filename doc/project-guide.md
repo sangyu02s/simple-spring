@@ -1,4 +1,4 @@
-# ssm-crud-demo 项目说明
+# simple-spring 项目说明
 
 这是一份面向 Spring/SSM 初学者的项目说明。当前项目是一个传统 Java Web 项目：
 
@@ -35,7 +35,7 @@ SSM 通常指：
 ## 2. 项目目录结构
 
 ```text
-ssm-crud-demo
+simple-spring
 ├── pom.xml
 ├── README.md
 ├── doc
@@ -57,7 +57,7 @@ ssm-crud-demo
 │           ├── dispatcher-servlet.xml
 │           └── web.xml
 └── target
-    └── ssm-crud-demo.war
+    └── simple-spring.war
 ```
 
 `target` 是 Maven 构建产物目录，可以删除后重新生成，不需要手写维护。
@@ -74,16 +74,16 @@ Maven 项目配置文件，负责说明：
 - 项目依赖：Spring MVC、Spring JDBC、MyBatis、Jackson、H2
 - 构建插件：编译插件和 WAR 打包插件
 
-这里的 `<finalName>ssm-crud-demo</finalName>` 决定生成的 WAR 文件名：
+这里的 `<finalName>simple-spring</finalName>` 决定生成的 WAR 文件名：
 
 ```text
-target/ssm-crud-demo.war
+target/simple-spring.war
 ```
 
 Tomcat 部署后，访问路径也会默认变成：
 
 ```text
-http://localhost:8080/ssm-crud-demo/
+http://localhost:8080/simple-spring/
 ```
 
 ### `src/main/webapp/WEB-INF/web.xml`
@@ -142,7 +142,7 @@ data.sql
 访问：
 
 ```text
-http://localhost:8080/ssm-crud-demo/
+http://localhost:8080/simple-spring/
 ```
 
 会返回一个 JSON，告诉你项目正在运行，以及真正的书籍接口地址。
@@ -251,25 +251,25 @@ updated_at -> updatedAt
 基础地址：
 
 ```text
-http://localhost:8080/ssm-crud-demo
+http://localhost:8080/simple-spring
 ```
 
 查询全部：
 
 ```bash
-curl http://localhost:8080/ssm-crud-demo/api/books
+curl http://localhost:8080/simple-spring/api/books
 ```
 
 查询单条：
 
 ```bash
-curl http://localhost:8080/ssm-crud-demo/api/books/1
+curl http://localhost:8080/simple-spring/api/books/1
 ```
 
 新增：
 
 ```bash
-curl -X POST http://localhost:8080/ssm-crud-demo/api/books \
+curl -X POST http://localhost:8080/simple-spring/api/books \
   -H 'Content-Type: application/json' \
   -d '{"title":"Java 21 Notes","author":"Sangyu","price":39.90}'
 ```
@@ -277,7 +277,7 @@ curl -X POST http://localhost:8080/ssm-crud-demo/api/books \
 修改：
 
 ```bash
-curl -X PUT http://localhost:8080/ssm-crud-demo/api/books/1 \
+curl -X PUT http://localhost:8080/simple-spring/api/books/1 \
   -H 'Content-Type: application/json' \
   -d '{"title":"Spring MVC Updated","author":"Spring Team","price":69.90}'
 ```
@@ -285,7 +285,7 @@ curl -X PUT http://localhost:8080/ssm-crud-demo/api/books/1 \
 删除：
 
 ```bash
-curl -X DELETE http://localhost:8080/ssm-crud-demo/api/books/1
+curl -X DELETE http://localhost:8080/simple-spring/api/books/1
 ```
 
 ## 5. 构建和部署
@@ -299,20 +299,20 @@ mvn clean package
 生成：
 
 ```text
-target/ssm-crud-demo.war
+target/simple-spring.war
 ```
 
 部署到 Tomcat：
 
 ```bash
-cp target/ssm-crud-demo.war /opt/homebrew/opt/tomcat/libexec/webapps/
+cp target/simple-spring.war /opt/homebrew/opt/tomcat/libexec/webapps/
 brew services restart tomcat
 ```
 
 访问：
 
 ```text
-http://localhost:8080/ssm-crud-demo/api/books
+http://localhost:8080/simple-spring/api/books
 ```
 
 ## 6. 为什么用 H2，而不是 MySQL
@@ -347,8 +347,8 @@ http://localhost:8080/你的项目名/
 正确路径：
 
 ```text
-http://localhost:8080/ssm-crud-demo/
-http://localhost:8080/ssm-crud-demo/api/books
+http://localhost:8080/simple-spring/
+http://localhost:8080/simple-spring/api/books
 ```
 
 ### WAR 名和访问路径不一致
@@ -358,13 +358,13 @@ Tomcat 默认使用 WAR 文件名作为访问路径。
 如果 WAR 是：
 
 ```text
-ssm-crud-demo.war
+simple-spring.war
 ```
 
 访问路径就是：
 
 ```text
-/ssm-crud-demo
+/simple-spring
 ```
 
 如果把 WAR 改名成：
